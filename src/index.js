@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { GlobalStyle } from './style'
-
 import App from './App'
+import { GlobalStyle } from './style'
 const Apps = (
   <React.Fragment>
     <GlobalStyle /> <App />
