@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
-
+import Header from './common/header'
 function App() {
   return (
     <Fragment>
-      <div className="App">hhh</div>
+      <Header></Header>
     </Fragment>
   )
 }
