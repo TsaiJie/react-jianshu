@@ -4,7 +4,7 @@ export const HeaderWrapper = styled.div`
   position: relative;
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
-  min-width: 870px;
+  min-width: 940px;
 `
 export const Logo = styled.a.attrs({
   href: '/'
@@ -86,13 +86,13 @@ export const NavSearch = styled.input.attrs({
     color: #999;
   }
   &.focused {
-    width: 240px;
+    width: 200px;
   }
   &.slide-enter {
     transition: all 0.2s ease-out;
   }
   &.slide-enter-active {
-    width: 240px;
+    width: 200px;
   }
   &.slide-exit {
     transition: all 0.2s ease-out;

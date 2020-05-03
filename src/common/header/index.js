@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { actionCreators } from './store'
 // 引入动画
 import { CSSTransition } from 'react-transition-group'
+
 import {
   HeaderWrapper,
   Logo,
@@ -50,22 +52,16 @@ const Header = props => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    focused: state.focused
+    focused: state.header.focused
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleInputFocus() {
-      const action = {
-        type: 'search_focus'
-      }
-      dispatch(action)
+      dispatch(actionCreators.searchFocus())
     },
     handleInputBlur() {
-      const action = {
-        type: 'search_blur'
-      }
-      dispatch(action)
+      dispatch(actionCreators.searchBlur())
     }
   }
 }

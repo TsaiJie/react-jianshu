@@ -118,3 +118,39 @@ this.state = {
  </span>
 ```
 
+### 3 对组件的数据进行拆分管理
+
+1. 在header目录下创建如下目录
+
+   ```
+   header
+   	store
+   		index.js 负责统一导出store中的内容
+   		reducer.js 负责处理action
+   		actionTypes.js 负责统一管理action的type 进行导出
+   		actionCreators.js 负责统一生成action
+   ```
+   
+2. 对src目录下的store中的reducer进行改写
+
+   ```js
+   import { combineReducers } from 'redux'
+   import { reducer as headerReducer } from '../common/header/store'
+   
+   export default combineReducers({
+     header: headerReducer
+   })
+   
+   ```
+
+3. 组件中这样对数据进行映射
+
+   ```js
+   const mapStateToProps = (state, ownProps) => {
+     return {
+       focused: state.header.focused
+     }
+   }
+   ```
+
+   
