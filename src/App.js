@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Header from './common/header'
+import store from './store'
+import { Provider } from 'react-redux'
 function App() {
   return (
-    <Fragment>
+    <Provider store={store}>
       <Header></Header>
-    </Fragment>
+    </Provider>
   )
 }
 
