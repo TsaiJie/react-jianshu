@@ -16,6 +16,13 @@ const Header = props => {
   return (
     <HeaderWrapper>
       <Logo />
+      <Addition>
+        <Button className="writting">
+          <span className="iconfont">&#xe6e5;</span>
+          写文章
+        </Button>
+        <Button className="reg">注册</Button>
+      </Addition>
       <Nav>
         <NavItem className="left">首页</NavItem>
         <NavItem className="left">下载APP</NavItem>
@@ -37,13 +44,6 @@ const Header = props => {
           </span>
         </SearchWrapper>
       </Nav>
-      <Addition>
-        <Button className="writting">
-          <span className="iconfont">&#xe6e5;</span>
-          写文章
-        </Button>
-        <Button className="reg">注册</Button>
-      </Addition>
     </HeaderWrapper>
   )
 }

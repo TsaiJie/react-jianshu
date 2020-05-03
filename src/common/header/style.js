@@ -4,28 +4,29 @@ export const HeaderWrapper = styled.div`
   position: relative;
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
+  min-width: 870px;
 `
 export const Logo = styled.a.attrs({
   href: '/'
 })`
   height: 56px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  float: left;
   display: block;
   width: 100px;
   height: 56px;
+  margin-right: 20px;
   /* 要使用变量的方式引入图片 */
   background: url(${logoPic});
   /* 缩放背景图片以完全装入背景区，可能背景区部分空白 */
   background-size: contain;
 `
 export const Nav = styled.div`
-  width: 960px;
-  margin: 0 auto;
+  width: 100%;
+  min-width: 400px;
   box-sizing: border-box;
   height: 100%;
-  padding-right: 70px;
+  padding-right: 270px;
+  padding-left: 145px;
 `
 // 如果当前是一个NavItem组件,同时NavItem有left class 同时NavItem有right class
 export const NavItem = styled.div`
@@ -63,6 +64,7 @@ export const SearchWrapper = styled.div`
     }
   }
 `
+
 export const NavSearch = styled.input.attrs({
   placeholder: '搜索'
 })`
@@ -99,11 +101,12 @@ export const NavSearch = styled.input.attrs({
     width: 160px;
   }
 `
+
 export const Addition = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
+  float: right;
   height: 56px;
+  width: 215px;
+  /* background-color: green; */
 `
 
 export const Button = styled.div`
