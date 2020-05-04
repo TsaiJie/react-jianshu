@@ -21,7 +21,8 @@ import {
 } from './style'
 class Header extends React.Component {
   getListArea() {
-    if (this.props.focused) {
+    const { focused, list } = this.props
+    if (focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -29,7 +30,7 @@ class Header extends React.Component {
             <SearchInfoSwitch>换一换</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {this.props.list.map(item => {
+            {list.map(item => {
               return <SearchInfoItem key={item}>{item}</SearchInfoItem>
             })}
           </SearchInfoList>
@@ -40,6 +41,7 @@ class Header extends React.Component {
     }
   }
   render() {
+    const { focused, handleInputFocus, handleInputBlur } = this.props
     return (
       <HeaderWrapper>
         <Logo />
@@ -65,14 +67,12 @@ class Header extends React.Component {
               classNames="slide"
             >
               <NavSearch
-                className={this.props.focused ? 'focused' : ''}
-                onFocus={this.props.handleInputFocus}
-                onBlur={this.props.handleInputBlur}
+                className={focused ? 'focused' : ''}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
-            <span
-              className={this.props.focused ? 'focused iconfont' : 'iconfont'}
-            >
+            <span className={focused ? 'focused iconfont' : 'iconfont'}>
               &#xe687;
             </span>
             {this.getListArea()}
