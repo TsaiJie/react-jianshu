@@ -120,6 +120,7 @@ export const SearchInfoTitle = styled.h3`
 export const SearchInfoSwitch = styled.span`
   float: right;
   font-size: 13px;
+  cursor: pointer;
   .spin {
     display: block;
     float: left;
