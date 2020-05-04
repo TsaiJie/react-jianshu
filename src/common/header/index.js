@@ -20,8 +20,8 @@ import {
   SearchInfoItem
 } from './style'
 class Header extends React.Component {
-  getListArea(show) {
-    if (show) {
+  getListArea() {
+    if (this.props.focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -29,18 +29,9 @@ class Header extends React.Component {
             <SearchInfoSwitch>换一换</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>简书</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>微信小程序</SearchInfoItem>
-            <SearchInfoItem>EOS</SearchInfoItem>
-            <SearchInfoItem>docker</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
+            {this.props.list.map(item => {
+              return <SearchInfoItem key={item}>{item}</SearchInfoItem>
+            })}
           </SearchInfoList>
         </SearchInfo>
       )
@@ -84,7 +75,7 @@ class Header extends React.Component {
             >
               &#xe687;
             </span>
-            {this.getListArea(this.props.focused)}
+            {this.getListArea()}
           </SearchWrapper>
         </Nav>
       </HeaderWrapper>
@@ -94,13 +85,15 @@ class Header extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    focused: state.getIn(['header', 'focused'])
+    focused: state.getIn(['header', 'focused']),
+    list: state.getIn(['header', 'list'])
     // focused: state.get('header').get('focused')
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleInputFocus() {
+      dispatch(actionCreators.getList())
       dispatch(actionCreators.searchFocus())
     },
     handleInputBlur() {

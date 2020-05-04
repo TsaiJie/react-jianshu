@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes'
 import { fromJS } from 'immutable'
-// 把state变为immutable对象
+// 把state变为immutable对象 同时会把数组也变为immutable对象，不能直接用set更改 需要对list转换为immutable
 const defaultState = fromJS({
   focused: false,
   list: []
@@ -13,6 +13,10 @@ export default (state = defaultState, action) => {
   }
   if (action.type === actionTypes.SEARCH_BLUR) {
     return state.set('focused', false)
+  }
+
+  if (action.type === actionTypes.CHANGE_LIST) {
+    return state.set('list', action.data)
   }
   return state
 }
