@@ -2,7 +2,8 @@ import * as actionTypes from './actionTypes'
 import { fromJS } from 'immutable'
 // 把state变为immutable对象
 const defaultState = fromJS({
-  focused: false
+  focused: false,
+  list: []
 })
 export default (state = defaultState, action) => {
   if (action.type === actionTypes.SEARCH_FOCUS) {
