@@ -1,7 +1,7 @@
 import React from 'react'
 import { WriterWrapper, WriterItem } from '../style'
 import { connect } from 'react-redux'
-class Writter extends React.Component {
+class Writter extends React.PureComponent {
   render() {
     const { list } = this.props
     return (

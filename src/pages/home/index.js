@@ -7,7 +7,7 @@ import Recommend from './components/Recommend'
 import Writter from './components/Writter'
 import List from './components/List'
 import { actionCreators } from './store'
-class Home extends React.Component {
+class Home extends React.PureComponent {
   handleScrollTop() {
     window.scrollTo(0, 0)
   }

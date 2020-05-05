@@ -13,8 +13,8 @@ function App() {
   return (
     <Provider store={store}>
       <React.Fragment>
-        <Header></Header>
         <BrowserRouter>
+          <Header></Header>
           {/* 路径完全相等的时候才匹配 exact */}
           <Route path="/" exact component={Home}></Route>
           <Route path="/detail" exact component={Detail}></Route>

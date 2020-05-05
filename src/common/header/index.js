@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { actionCreators } from './store'
 // 引入动画
 import { CSSTransition } from 'react-transition-group'
+import { Link } from 'react-router-dom'
 
 import {
   HeaderWrapper,
@@ -77,7 +78,10 @@ class Header extends React.Component {
     const { focused, handleInputFocus, handleInputBlur, list } = this.props
     return (
       <HeaderWrapper>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
+
         <Addition>
           <Button className="writting">
             <span className="iconfont">&#xe6e5;</span>
