@@ -53,6 +53,65 @@ const defaultState = fromJS({
       imgUrl:
         'https://upload-images.jianshu.io/upload_images/21731714-25594f6b2108e06b.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
     }
+  ],
+  recommendList: [
+    {
+      id: 1,
+      imgUrl:
+        'https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png'
+    },
+    {
+      id: 2,
+      imgUrl:
+        'https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png'
+    },
+    {
+      id: 3,
+      imgUrl:
+        'https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png'
+    },
+    {
+      id: 4,
+      imgUrl:
+        'https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png'
+    }
+  ],
+  writterList: [
+    {
+      id: 1,
+      imgUrl:
+        'https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writer: '董克平日记',
+      desc: '写了945.3k字 · 3.6k喜欢'
+    },
+    {
+      id: 2,
+      imgUrl:
+        'https://upload.jianshu.io/users/upload_avatars/3343569/6940ee65-036f-4b7a-9935-5915d9b67d14.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writer: '吴晓布',
+      desc: '写了761.4k字 · 24.9k喜欢'
+    },
+    {
+      id: 3,
+      imgUrl:
+        'https://upload.jianshu.io/users/upload_avatars/3730494/4a86a2a7-d5b9-47f1-969a-d8ef4711488b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writer: '格列柯南',
+      desc: '写了766.6k字 · 44k喜欢'
+    },
+    {
+      id: 4,
+      imgUrl:
+        'https://upload.jianshu.io/users/upload_avatars/5796592/73837104-47e5-4fe9-a5be-054bd50b06f7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writer: '乔汉童',
+      desc: '写了358.3k字 · 2k喜欢'
+    },
+    {
+      id: 5,
+      imgUrl:
+        'https://upload.jianshu.io/users/upload_avatars/2564926/88bfdbeeb083.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writer: '王老师八卦美术史',
+      desc: '写了106.5k字 · 1.4k喜欢'
+    }
   ]
 })
 export default (state = defaultState, action) => {
