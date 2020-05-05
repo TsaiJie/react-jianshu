@@ -4,7 +4,8 @@ const defaultState = fromJS({
   topicList: [],
   articleList: [],
   recommendList: [],
-  writterList: []
+  writterList: [],
+  articlePage: 1
 })
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -15,6 +16,12 @@ export default (state = defaultState, action) => {
         recommendList: fromJS(action.recommendList),
         writterList: fromJS(action.writterList)
       })
+    case actionTypes.ADD_HOME_LIST:
+      return state.merge({
+        articleList: state.get('articleList').concat(action.result),
+        articlePage: action.nextPage
+      })
+
     default:
       return state
   }
