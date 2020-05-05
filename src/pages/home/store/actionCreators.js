@@ -37,3 +37,7 @@ export const getMoreListAction = page => {
     })
   }
 }
+export const toggleTopShow = isShow => ({
+  type: actionTypes.TOGGLE_SCROLL_SHOW,
+  isShow
+})
