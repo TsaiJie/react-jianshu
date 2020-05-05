@@ -11,6 +11,7 @@ class Recommend extends React.Component {
             <RecommendItem
               key={item.get('id')}
               imgUrl={item.get('imgUrl')}
+              hrefUrl={item.get('hrefUrl')}
             ></RecommendItem>
           )
         })}

@@ -14,7 +14,7 @@ class Writter extends React.Component {
                 <p className="writer">{item.get('writter')}</p>
                 <p className="desc"> {item.get('desc')}</p>
                 <p>
-                  <burtton className="guanzhu">+ 关注</burtton>
+                  <button className="guanzhu">+ 关注</button>
                 </p>
               </div>
             </WriterItem>

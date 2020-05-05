@@ -76,7 +76,10 @@ export const RecommendWrapper = styled.div`
   margin: 30px 0;
   width: 280px;
 `
-export const RecommendItem = styled.div`
+export const RecommendItem = styled.a.attrs(props => ({
+  href: props.hrefUrl
+}))`
+  display: block;
   width: 280px;
   height: 50px;
   background: url(${props => props.imgUrl});
@@ -114,6 +117,7 @@ export const WriterItem = styled.div`
       color: #969696;
     }
     .guanzhu {
+      border: none;
       cursor: pointer;
       text-decoration: none;
       top: 10px;
