@@ -14,7 +14,7 @@ class Detail extends React.Component {
     )
   }
   componentDidMount() {
-    this.props.getDetail()
+    this.props.getDetail(this.props.match.params.id)
   }
 }
 
@@ -26,8 +26,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getDetail() {
-      dispatch(actionCreators.getDetailAction())
+    getDetail(id) {
+      dispatch(actionCreators.getDetailAction(id))
     }
   }
 }

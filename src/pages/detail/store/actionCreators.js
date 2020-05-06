@@ -5,9 +5,9 @@ const chageDetail = (title, content) => ({
   title,
   content
 })
-export const getDetailAction = () => {
+export const getDetailAction = id => {
   return dispatch => {
-    axios.get('/api/detail.json').then(res => {
+    axios.get('/api/detail.json?id=' + id).then(res => {
       const result = res.data.data
       dispatch(chageDetail(result.title, result.content))
     })

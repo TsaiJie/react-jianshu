@@ -17,7 +17,7 @@ function App() {
           <Header></Header>
           {/* 路径完全相等的时候才匹配 exact */}
           <Route path="/" exact component={Home}></Route>
-          <Route path="/detail" exact component={Detail}></Route>
+          <Route path="/detail/:id" exact component={Detail}></Route>
         </BrowserRouter>
       </React.Fragment>
     </Provider>
