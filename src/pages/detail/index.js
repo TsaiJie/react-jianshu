@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { DetailWrapper, Header, Content } from './style'
+import { withRouter } from 'react-router-dom'
 import { actionCreators } from './store'
 class Detail extends React.PureComponent {
   render() {
@@ -31,4 +32,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Detail)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail))

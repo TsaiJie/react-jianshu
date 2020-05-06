@@ -8,6 +8,8 @@ yarn add react-transition-group 负责动画
 yarn add redux react-redux 负责数据管理
 yarn add immutable redux-immutable 负责State数据的不可变性，防止恶意更改
 yarn add redux-thunk axios 负责扩展action的功能，既可以返回对象，也可以返回函数。 
+yarn add react-router-dom 路由跳转
+yarn add react-loadable 组件异步加载
 ```
 
 
@@ -512,6 +514,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 ### 3 其他页面
 
+```
+yarn add react-router-dom
+```
+
+
+
 #### react路由
 
 ```js
@@ -540,6 +548,8 @@ function App() {
 
 #### 动态路由以及路由传参
 
+Link Redirect Route
+
 动态路由
 
 ```
@@ -552,5 +562,45 @@ function App() {
 1 列表页 <Link key={index} to={'/detail?id=' + item.get('id')}>
 2 路由页面 路由规则保持不变<Route path="/detail" exact component={Detail}></Route>
 3 详情页 通过this.props.location.search来获取 但是获取到的是 ?id=2 需要手动解析
+```
+
+
+
+### 异步组件加载
+
+```
+yarn add react-loadable 组件异步加载
+```
+
+在需要进行懒加载的目录创建一个`loadable.js`文件
+
+```js
+import React from 'react'
+import Loadable from 'react-loadable'
+
+const LoadableComponent = Loadable({
+  // 需要加载的真正组件的路径
+  loader: () => import('./'),
+  //加载过程中 展示的东西
+  loading() {
+    return <div>正在加载</div>
+  }
+})
+export default () => <LoadableComponent />
+
+```
+
+路由改写
+
+```js
+// 注意此时引入的 loadable.js 所以loadable可以获取路由中的内容， 真正的组件页面无法享有路由传递的参数
+// 需要在组件页面 import { withRouter } from 'react-router-dom'
+// 组件导出的时候使用 withRouter(Detail) 
+// 这样就能获取到路由跳转传递的数据了
+import Detail from './pages/detail/loadable.js'
+...
+<Route path="/detail/:id" exact component={Detail}></Route>
+...
+
 ```
 
