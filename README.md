@@ -510,3 +510,47 @@ const mapDispatchToProps = (dispatch, ownProps) => {
  
 ```
 
+### 3 其他页面
+
+#### react路由
+
+```js
+// 引入路由
+import { BrowserRouter, Route } from 'react-router-dom'
+// BrowserRouter 用来包裹需要跳转的组件
+function App() {
+  return (
+    <Provider store={store}>
+      <React.Fragment>
+        <BrowserRouter>
+          <Header></Header>
+          {/* 路径完全相等的时候才匹配 exact */}
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/detail" exact component={Detail}></Route>
+        </BrowserRouter>
+      </React.Fragment>
+    </Provider>
+  )
+}
+//路由跳转
+<Link key={index} to={'/detail/'}> 组件</Link>
+```
+
+
+
+#### 动态路由以及路由传参
+
+动态路由
+
+```
+1 列表页 <Link key={index} to={'/detail/' + item.get('id')}>
+2 路由页面 更改为动态路由 <Route path="/detail/:id" exact component={Detail}></Route>
+3 详情页 通过this.props.match.params.id来获取 
+```
+路由传参
+```
+1 列表页 <Link key={index} to={'/detail?id=' + item.get('id')}>
+2 路由页面 路由规则保持不变<Route path="/detail" exact component={Detail}></Route>
+3 详情页 通过this.props.location.search来获取 但是获取到的是 ?id=2 需要手动解析
+```
+
