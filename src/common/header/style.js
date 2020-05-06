@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.div`
   border-bottom: 1px solid #f0f0f0;
   min-width: 940px;
 `
-export const Logo = styled.a`
+export const Logo = styled.div`
   height: 56px;
   float: left;
   display: block;
