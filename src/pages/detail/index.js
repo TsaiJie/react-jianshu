@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { DetailWrapper, Header, Content } from './style'
 import { actionCreators } from './store'
-class Detail extends React.Component {
+class Detail extends React.PureComponent {
   render() {
     return (
       <DetailWrapper>
